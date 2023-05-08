@@ -7,6 +7,8 @@ textArray = text.split('');
 const howManyCharAndType = textArray.reduce((perv,cur) => {
     const charType = cur;
     let i = 1;
+    if (charType != " ")
+    {
     if (!perv[charType]){
         perv[charType] = {charType: cur,numb: i};
         
@@ -14,6 +16,7 @@ const howManyCharAndType = textArray.reduce((perv,cur) => {
          
          perv[charType].numb = perv[charType].numb + 1;
     }
+}
     return perv;
 },{})
 
